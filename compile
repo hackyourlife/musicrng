@@ -1,0 +1,8 @@
+#!/bin/sh
+[ -d bin ] && rm -rf bin
+mkdir bin
+cd src
+javac -d ../bin org/unknown/MusicGenerator.java
+cd ../bin
+cp -r ../src .
+jar -cfm ../musicrng.jar ../MANIFEST.MF src/ org/
